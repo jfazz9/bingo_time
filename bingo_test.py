@@ -10,7 +10,7 @@ class TestBingo(unittest.TestCase):
 
     def test_add_number(self):
         for i in range(1,5):
-            number = random.choice(bingo.all_numbers)
+            number = random.choice(self.bingo.all_numbers)
             self.bingo_numb.append(number)
             total = self.bingo.add_number(number)
             print(total)
@@ -25,16 +25,12 @@ class TestBingo(unittest.TestCase):
     def test_check_number(self):
         self.assertEqual(self.bingo_numb in self.bingo_id, True)
 
+    def test_new_game(self):
+        self.bingo.new_game()
+        self.assertEquals(self.bingo.bingo_numbers, [])
+        self.assertIsNotNone(self.bingo.all_numbers)
+        print(self.bingo.all_numbers, self.bingo.bingo_numbers)
 
-    # def test_adding(self):
-    #     self.assertEqual(2 in bingo.all_numbers, True)
-    #     self.assertEqual(9 in bingo.all_numbers, False)
-    #     self.assertEqual(9 in bingo.bingo_numbers, True)
-    #     self.assertEqual(2 in bingo.bingo_numbers, False)
-
-    # def test_new_game(self):
-    #     bingo.new_game()
-    #     self.assertEqual()
 
 if __name__ == '__main__':
     unittest.main()
