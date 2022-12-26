@@ -27,7 +27,7 @@ class TestBingo(unittest.TestCase):
 
     def test_new_game(self):
         self.bingo.new_game()
-        self.assertEquals(self.bingo.bingo_numbers, [])
+        self.assertEqual(self.bingo.bingo_numbers, [])
         self.assertIsNotNone(self.bingo.all_numbers)
         print(self.bingo.all_numbers, self.bingo.bingo_numbers)
 
