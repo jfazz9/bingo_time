@@ -4,12 +4,18 @@ class Bingo:
         self.bingo_numbers = []
 
     def add_number(self, number):
-        self.bingo_numbers.append(number)
-        self.all_numbers.pop(number)
+        try:
+            if number in self.all_numbers:
+                self.all_numbers.remove(number)
+                self.bingo_numbers.append(number)
+
+        except ValueError:
+            print(f'{number} not in the list try again')
+
 
     def check_current_game(self):
-        return f'Bingo numbers: {self.bingo_numbers} \n,
-                remaining numbers {self.all_numbers}'
+        return  print(f'Bingo numbers: {self.bingo_numbers} \n'
+                f'remaining numbers {self.all_numbers}')
 
     def check_number(self, number):
         return number in self.bingo_numbers
