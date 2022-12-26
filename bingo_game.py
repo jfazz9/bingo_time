@@ -8,10 +8,13 @@ class Bingo:
             if number in self.all_numbers:
                 self.all_numbers.remove(number)
                 self.bingo_numbers.append(number)
+            else:
+                print(f'{number} has already been chosen')
 
         except ValueError:
             print(f'{number} not in the list try again')
 
+        return self.bingo_numbers
 
     def check_current_game(self):
         return  print(f'Bingo numbers: {self.bingo_numbers} \n'
