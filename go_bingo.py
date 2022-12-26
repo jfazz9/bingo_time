@@ -39,8 +39,12 @@ if __name__ == '__main__':
 
             elif decision == 3:
                 print(bingo.check_current_game())
+            elif decision == 4:
+                bingo.new_game()
+            elif decision == 5:
+                quit()
             else:
                 continue
 
-        except TypeError:
+        except TypeError or ValueError:
             print('please enter a number')
