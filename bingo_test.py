@@ -21,7 +21,14 @@ class TestBingo(unittest.TestCase):
         print(f'bingo_id length {len(self.bingo_id)}')
         print(self.bingo_id)
 
-
+    def test_duplicate(self):
+        duplicate = self.bingo_numb[0] #index to one specific number
+        old_state = self.bingo_id
+        new = self.bingo.add_number(duplicate)
+        self.bingo_id.append(new)
+        self.assertEqual(old_state[-1], new)
+        print('successful duplicate test')
+        
     def test_check_number(self):
         self.assertEqual(self.bingo_numb in self.bingo_id, True)
 
